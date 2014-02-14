@@ -62,7 +62,7 @@ public class NLService extends NotificationListenerService {
                 int i=1;
                 for (StatusBarNotification sbn : NLService.this.getActiveNotifications()) {
                     Intent i2 = new  Intent("com.kpbird.nlsexample.NOTIFICATION_LISTENER_EXAMPLE");
-                    i2.putExtra("notification_event",i +" " + sbn.getPackageName() + "\n");
+                    i2.putExtra("notification_event",i +" " + sbn.getPackageName() + "\n" + sbn.getNotification().tickerText);
                     sendBroadcast(i2);
                     i++;
                 }
